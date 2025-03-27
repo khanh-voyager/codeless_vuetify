@@ -1,0 +1,15 @@
+{
+  "name": "codeless_vuetify",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "@nuxtjs/vuetify": "^1.12.3",
+    "nuxt": "^2.18.1"
+  }
+}
