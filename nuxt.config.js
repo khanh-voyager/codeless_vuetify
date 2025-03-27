@@ -2,6 +2,12 @@
 export default {
   buildModules: ["@nuxtjs/vuetify"],
   modules: ["@nuxtjs/vuetify"],
+  vue: {
+    config: {
+      devtools: true,
+      productionTip: false,
+    },
+  },
   vuetify: {
     /* Vuetify options */
     theme: {

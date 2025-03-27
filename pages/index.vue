@@ -1,7 +1,7 @@
 <template>
     <div id="MainPage">
       <v-btn color="primary" @click="showPopup = true">Open Popup</v-btn>
-      <FormPopup v-if="showPopup" @close="showPopup = false" />
+      <FormPopup v-if="showPopup" @closePopup="showPopup = false" />
     </div>
   </template>
 
@@ -10,7 +10,7 @@
 
   export default {
     components: {
-        FormPopup,
+      FormPopup,
     },
     data() {
       return {
