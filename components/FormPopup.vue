@@ -14,12 +14,31 @@
           v-model="search"
           label="Search"
           clearable
+          filled
+          rounded
+          solo
+          dense
+          flat
+          hide-details="auto"
+          background-color="blue lighten-5"
+          color="grey darken-1"
           @input="filterItems"
-        />
-        <v-radio-group v-model="radioGroup">
-            <v-radio v-for="(item, index) in filteredItems" :key="index" :label="item.label" :value="item.value"></v-radio>
-          </v-radio-group>
-        </v-card-text>
+        >
+          <template v-slot:prepend-inner>
+            <v-icon color="blue darken-1">mdi-magnify</v-icon>
+          </template>
+        </v-text-field>
+        <v-radio-group class="mt-0" v-model="radioGroup">
+          <v-list>
+            <template v-for="(item, index) in filteredItems">
+              <v-list-item class="px-0" :key="index">
+                <v-radio color="blue darken-1" :label="item.label" :value="item.value"></v-radio>
+              </v-list-item>
+              <v-divider></v-divider>
+            </template>
+          </v-list>
+        </v-radio-group>
+      </v-card-text>
 
       <v-card-actions>
         <v-spacer></v-spacer>
