@@ -10,20 +10,8 @@
       </v-card-title>
 
       <v-card-text>
-        <v-text-field
-          v-model="search"
-          label="Search"
-          clearable
-          filled
-          rounded
-          solo
-          dense
-          flat
-          hide-details="auto"
-          background-color="blue lighten-5"
-          color="grey darken-1"
-          @input="filterItems"
-        >
+        <v-text-field v-model="search" label="Search" clearable filled rounded solo dense flat hide-details="auto"
+          background-color="blue lighten-5" color="grey darken-1" @input="filterItems">
           <template v-slot:prepend-inner>
             <v-icon color="blue darken-1">mdi-magnify</v-icon>
           </template>

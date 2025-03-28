@@ -1,16 +1,8 @@
 <template>
   <div class="text-center">
-    <v-dialog
-      v-model="dialog"
-      width="500"
-    >
+    <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          color="red lighten-2"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
+        <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">
           Click
         </v-btn>
       </template>
@@ -28,7 +20,8 @@
           <v-list>
             <template v-for="(item, index) in items">
               <v-list-item class="px-0" :key="index">
-                <v-checkbox hide-details class="shrink mt-0" v-model="selected" color="blue darken-1" :value="item.value" :label="item.label"></v-checkbox>
+                <v-checkbox hide-details class="shrink mt-0" v-model="selected" color="blue darken-1"
+                  :value="item.value" :label="item.label"></v-checkbox>
               </v-list-item>
               <v-divider></v-divider>
             </template>

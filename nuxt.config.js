@@ -1,7 +1,8 @@
 // nuxt.config.js
 export default {
   buildModules: ["@nuxtjs/vuetify"],
-  modules: ["@nuxtjs/vuetify"],
+  modules: ["@nuxtjs/vuetify", "@nuxtjs/axios"],
+  plugins: ["~/plugins/axios.js"],
   vue: {
     config: {
       devtools: true,
