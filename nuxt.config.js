@@ -1,12 +1,32 @@
 // nuxt.config.js
 export default {
   buildModules: ["@nuxtjs/vuetify"],
-  modules: ["@nuxtjs/vuetify", "@nuxtjs/axios"],
-  plugins: ["~/plugins/axios.js"],
+  modules: ["@nuxtjs/vuetify", "@nuxtjs/axios", "@nuxtjs/proxy"],
   vue: {
     config: {
       devtools: true,
       productionTip: false,
+    },
+  },
+  publicRuntimeConfig: {
+    baseUrl: process.env.API_BASE_URL,
+    apiKey: process.env.X_API_KEY,
+  },
+  axios: {
+    proxy: true,
+    baseURL: "/api",
+    headers: {
+      common: {
+        "X-Api-Key": process.env.X_API_KEY,
+      },
+    },
+  },
+
+  proxy: {
+    "/api/": {
+      target: process.env.API_BASE_URL,
+      pathRewrite: { "^/api/": "" },
+      changeOrigin: true,
     },
   },
   vuetify: {

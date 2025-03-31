@@ -1,8 +1,10 @@
 <template>
   <div id="MainPage">
-    <v-btn color="primary" @click="showPopup = true">Open Popup</v-btn>
-    <FormSelectBoxPopup v-if="showPopup" @closePopup="showPopup = false" />
-    <FormCheckboxPopup />
+    <v-btn color="primary" @click="showSelectBoxPopup = true">Open Selectbox</v-btn>
+    <FormSelectBoxPopup v-model="showSelectBoxPopup" @closePopup="showSelectBoxPopup = false" />
+
+    <v-btn color="red lighten-2" class="ml-4" @click="showCheckboxPopup = true">Open Checkbox</v-btn>
+    <FormCheckboxPopup v-model="showCheckboxPopup" @closePopup="showCheckboxPopup = false" />
   </div>
 </template>
 
@@ -17,8 +19,8 @@ export default {
   },
   data() {
     return {
-      showPopup: false,
-      apiResponse: null,
+      showSelectBoxPopup: false,
+      showCheckboxPopup: false,
     };
   },
   mounted() {
@@ -28,7 +30,7 @@ export default {
   methods: {
     triggerLambdaFunction() {
       // Replace with your actual API endpoint
-      this.$axios.$post('/staging/filter')
+      this.$axios.$post('/api/filter')
         .then(response => {
           console.log('Triggered Lambda!');
         })
