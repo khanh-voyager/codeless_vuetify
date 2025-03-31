@@ -13,22 +13,10 @@ export default {
     apiKey: process.env.X_API_KEY,
   },
   axios: {
-    proxy: true,
-    baseURL: "/api",
-    headers: {
-      common: {
-        "X-Api-Key": process.env.X_API_KEY,
-      },
-    },
+    proxy: false,
+    baseURL: process.env.API_BASE_URL,
   },
 
-  proxy: {
-    "/api/": {
-      target: process.env.API_BASE_URL,
-      pathRewrite: { "^/api/": "" },
-      changeOrigin: true,
-    },
-  },
   vuetify: {
     /* Vuetify options */
     theme: {
