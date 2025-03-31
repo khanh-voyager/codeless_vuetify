@@ -30,7 +30,7 @@ export default {
   methods: {
     triggerLambdaFunction() {
       // Replace with your actual API endpoint
-      this.$axios.$post('/api/filter')
+      this.$axios.$post('/filter')
         .then(response => {
           console.log('Triggered Lambda!');
         })

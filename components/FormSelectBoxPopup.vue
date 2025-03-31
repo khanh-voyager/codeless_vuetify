@@ -84,7 +84,7 @@ export default {
         "selected_column": { "name": "defect_name", "option": "distinct" }
       };
       try {
-        const response = await this.$axios.$post('/api/filter', bodyRequest);
+        const response = await this.$axios.$post('/filter', bodyRequest);
 
         // Map the response data to the expected format
         if (response.data && Array.isArray(response.data)) {
