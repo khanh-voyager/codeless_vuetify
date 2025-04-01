@@ -15,7 +15,6 @@ export default {
   },
   axios: {
     baseURL: process.env.API_BASE_URL,
-    browserBaseURL: process.env.BROWSER_BASE_URL || process.env.API_BASE_URL,
     credentials: false,
     proxy: false,
   },

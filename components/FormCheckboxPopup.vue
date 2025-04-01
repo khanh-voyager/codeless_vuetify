@@ -2,7 +2,7 @@
   <v-dialog v-model="dialog" width="500">
     <v-card>
       <v-card-title>
-        <span class="headline">ラベル名: 作業前-1</span>
+        <span class="headline">ラベル名: defect_name</span>
         <v-spacer></v-spacer>
         <v-btn icon @click="closeDialog">
           <v-icon>mdi-close</v-icon>

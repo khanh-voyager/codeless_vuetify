@@ -2,7 +2,7 @@
   <v-dialog v-model="dialog" max-width="500">
     <v-card>
       <v-card-title>
-        <span class="headline">ラベル名: 作業前-1</span>
+        <span class="headline">ラベル名: defect_name和訳</span>
         <v-spacer></v-spacer>
         <v-btn icon @click="closeDialog">
           <v-icon>mdi-close</v-icon>
@@ -81,7 +81,7 @@ export default {
           "display_text_ja__not": "味の違和感(8000_Taste)"
         },
         "order_by": "component_defect_assignment_id,-defect_code",
-        "selected_column": { "name": "defect_name", "option": "distinct" }
+        "selected_column": { "name": "defect_name和訳", "option": "distinct" }
       };
       try {
         const response = await this.$axios.$post('/filter', bodyRequest);
@@ -89,8 +89,8 @@ export default {
         // Map the response data to the expected format
         if (response.data && Array.isArray(response.data)) {
           this.items = response.data.map(item => ({
-            label: item.defect_name,
-            value: item.defect_name
+            label: item.defect_name和訳,
+            value: item.defect_name和訳
           }));
           this.filteredItems = [...this.items];
         } else {
