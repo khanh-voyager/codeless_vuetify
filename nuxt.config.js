@@ -2,6 +2,7 @@
 export default {
   buildModules: ["@nuxtjs/vuetify"],
   modules: ["@nuxtjs/vuetify", "@nuxtjs/axios"],
+  plugins: ["~/plugins/axios"],
   vue: {
     config: {
       devtools: true,
@@ -13,8 +14,10 @@ export default {
     apiKey: process.env.X_API_KEY,
   },
   axios: {
-    proxy: false,
     baseURL: process.env.API_BASE_URL,
+    browserBaseURL: process.env.BROWSER_BASE_URL || process.env.API_BASE_URL,
+    credentials: false,
+    proxy: false,
   },
 
   vuetify: {
